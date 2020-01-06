@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOSPaintFinger", "iOSPaintFinger\iOSPaintFinger.csproj", "{FF9FF9C0-019C-4F22-95F0-268A91D87ABF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhone = Debug|iPhone
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF9FF9C0-019C-4F22-95F0-268A91D87ABF}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{FF9FF9C0-019C-4F22-95F0-268A91D87ABF}.Debug|iPhone.Build.0 = Debug|iPhone
+		{FF9FF9C0-019C-4F22-95F0-268A91D87ABF}.Debug|iPhone.Deploy.0 = Debug|iPhone
+		{FF9FF9C0-019C-4F22-95F0-268A91D87ABF}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{FF9FF9C0-019C-4F22-95F0-268A91D87ABF}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{FF9FF9C0-019C-4F22-95F0-268A91D87ABF}.Debug|iPhoneSimulator.Deploy.0 = Debug|iPhoneSimulator
+		{FF9FF9C0-019C-4F22-95F0-268A91D87ABF}.Release|iPhone.ActiveCfg = Release|iPhone
+		{FF9FF9C0-019C-4F22-95F0-268A91D87ABF}.Release|iPhone.Build.0 = Release|iPhone
+		{FF9FF9C0-019C-4F22-95F0-268A91D87ABF}.Release|iPhone.Deploy.0 = Release|iPhone
+		{FF9FF9C0-019C-4F22-95F0-268A91D87ABF}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{FF9FF9C0-019C-4F22-95F0-268A91D87ABF}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{FF9FF9C0-019C-4F22-95F0-268A91D87ABF}.Release|iPhoneSimulator.Deploy.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6451E214-821D-4863-841A-6DB1CA6094E5}
+	EndGlobalSection
+EndGlobal
