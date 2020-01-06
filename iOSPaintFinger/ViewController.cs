@@ -8,30 +8,20 @@ namespace iOSPaintFinger
 {
     public partial class ViewController : UIViewController
     {
-        List<UIColor> uIColors = new List<UIColor>();
-        int selectedColor = 0;
+        UIColor brushColor = UIColor.Red;
+
+        int brushSize = 5;
+
         public ViewController (IntPtr handle) : base (handle)
         {
            
         }
 
-        public override void ViewDidLoad ()
+        public override void ViewDidLoad()
         {
-            base.ViewDidLoad ();
+            base.ViewDidLoad();
 
-            uIColors.Add(UIColor.Black);
-            uIColors.Add(UIColor.DarkGray);
-            uIColors.Add(UIColor.LightGray);
-            uIColors.Add(UIColor.White);
-            uIColors.Add(UIColor.Blue);
-            uIColors.Add(UIColor.Red);
-            uIColors.Add(UIColor.Yellow);
-            uIColors.Add(UIColor.Magenta);
-            uIColors.Add(UIColor.Green);
-            uIColors.Add(UIColor.Cyan);
-
-            BrushColor.ThumbTintColor = uIColors[selectedColor];
-
+            //undo, clear
             undoBT.TouchUpInside += (sender, e) =>
             {
                 DrawView.Undoline();
@@ -41,24 +31,35 @@ namespace iOSPaintFinger
                 DrawView.Clear();
             };
 
-            BrushColor.ValueChanged += (sender, e) =>
+            //set brush color
+            Red.TouchUpInside += (sender, e) =>
             {
-                if (BrushColor.Value > 0)
-                {
-                    selectedColor = (int)Math.Ceiling(BrushColor.Value / BrushColor.MaxValue * uIColors.Count - 1);
-                    BrushColor.ThumbTintColor = uIColors[selectedColor];
-                }
+                brushColor = Red.BackgroundColor;
             };
-            BrushSize.TouchUpInside += (sender, e) =>
+            Green.TouchUpInside += (sender, e) =>
             {
-                infoBrushSize.Hidden = true;
+                brushColor = Green.BackgroundColor;
             };
-            BrushSize.ValueChanged += (sender, e) =>
+            Orange.TouchUpInside += (sender, e) =>
             {
-                infoBrushSize.Text = ((int)BrushSize.Value).ToString();
-                infoBrushSize.Hidden = false;
+                brushColor = Orange.BackgroundColor;
             };
-        }
+
+            //set brush size
+            Thick.TouchUpInside += (sender, e) =>
+            {
+                brushSize = 25;
+            };
+            Medium.TouchUpInside += (sender, e) =>
+            {
+                brushSize = 15;
+            };
+            Thin.TouchUpInside += (sender, e) =>
+            {
+                brushSize = 5;
+            };
+
+        }           
 
         public override void TouchesBegan(NSSet touches, UIEvent evt)
         {
@@ -69,8 +70,8 @@ namespace iOSPaintFinger
                 var newline = new FingerPaint.Line();
                 
                 newline.point.Add(point);
-                newline.strokeWidth = BrushSize.Value;
-                newline.color = uIColors[selectedColor];
+                newline.strokeWidth = brushSize;
+                newline.color = brushColor;
 
                 DrawView.Lines.Add(newline);
             }
@@ -83,8 +84,8 @@ namespace iOSPaintFinger
             foreach (UITouch touch in touches.Cast<UITouch>())
             {
                 var point = touch.LocationInView(DrawView);
-                DrawView.Lines[DrawView.Lines.Count - 1].strokeWidth = BrushSize.Value;
-                DrawView.Lines[DrawView.Lines.Count - 1].color = uIColors[selectedColor];
+                DrawView.Lines[DrawView.Lines.Count - 1].strokeWidth = brushSize;
+                DrawView.Lines[DrawView.Lines.Count - 1].color = brushColor;
                 DrawView.Lines[DrawView.Lines.Count - 1].point.Add(point);
             }
             DrawView.SetNeedsDisplay();

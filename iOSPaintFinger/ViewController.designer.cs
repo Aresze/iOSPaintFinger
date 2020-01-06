@@ -16,14 +16,6 @@ namespace iOSPaintFinger
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UISlider BrushColor { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UISlider BrushSize { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton ClearBT { get; set; }
 
         [Outlet]
@@ -32,7 +24,27 @@ namespace iOSPaintFinger
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel infoBrushSize { get; set; }
+        UIKit.UIButton Green { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton Medium { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton Orange { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton Red { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton Thick { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton Thin { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -40,16 +52,6 @@ namespace iOSPaintFinger
 
         void ReleaseDesignerOutlets ()
         {
-            if (BrushColor != null) {
-                BrushColor.Dispose ();
-                BrushColor = null;
-            }
-
-            if (BrushSize != null) {
-                BrushSize.Dispose ();
-                BrushSize = null;
-            }
-
             if (ClearBT != null) {
                 ClearBT.Dispose ();
                 ClearBT = null;
@@ -60,9 +62,34 @@ namespace iOSPaintFinger
                 DrawView = null;
             }
 
-            if (infoBrushSize != null) {
-                infoBrushSize.Dispose ();
-                infoBrushSize = null;
+            if (Green != null) {
+                Green.Dispose ();
+                Green = null;
+            }
+
+            if (Medium != null) {
+                Medium.Dispose ();
+                Medium = null;
+            }
+
+            if (Orange != null) {
+                Orange.Dispose ();
+                Orange = null;
+            }
+
+            if (Red != null) {
+                Red.Dispose ();
+                Red = null;
+            }
+
+            if (Thick != null) {
+                Thick.Dispose ();
+                Thick = null;
+            }
+
+            if (Thin != null) {
+                Thin.Dispose ();
+                Thin = null;
             }
 
             if (undoBT != null) {
